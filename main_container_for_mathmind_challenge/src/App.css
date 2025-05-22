@@ -1,9 +1,13 @@
 :root {
   --kavia-orange: #E87A41;
   --kavia-dark: #1A1A1A;
+  --kavia-green: #4caf50;
+  --kavia-red: #ff4d4d;
+  --kavia-blue: #2196f3;
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 body {
@@ -72,7 +76,7 @@ body {
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
@@ -105,4 +109,225 @@ body {
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
+}
+
+/* Game Area Styles */
+.game-area {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Timer Styles */
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.timer-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.timer-progress {
+  width: 100px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.timer-progress-bar {
+  height: 100%;
+  transition: width 1s linear, background-color 0.5s ease;
+}
+
+/* ScoreBoard Styles */
+.scoreboard {
+  display: flex;
+  gap: 20px;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.score-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* MathProblem Styles */
+.math-problem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.math-problem-inactive {
+  color: var(--text-secondary);
+}
+
+.problem-expression {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.answer-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.answer-input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: var(--kavia-orange);
+  box-shadow: 0 0 0 2px rgba(232, 122, 65, 0.2);
+}
+
+.answer-submit {
+  padding: 10px 20px;
+}
+
+/* GameControls Styles */
+.game-controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.difficulty-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.difficulty-select:focus {
+  outline: none;
+  border-color: var(--kavia-orange);
+}
+
+.start-btn {
+  background-color: var(--kavia-green);
+}
+
+.start-btn:hover {
+  background-color: #5dc264;
+}
+
+.end-btn {
+  background-color: var(--kavia-red);
+}
+
+.end-btn:hover {
+  background-color: #ff6666;
+}
+
+/* Last Answer Feedback */
+.last-answer {
+  text-align: center;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 4px;
+  animation: fadeIn 0.5s;
+}
+
+.correct {
+  color: var(--kavia-green);
+}
+
+.incorrect {
+  color: var(--kavia-red);
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .game-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .problem-expression {
+    font-size: 1.8rem;
+  }
 }
