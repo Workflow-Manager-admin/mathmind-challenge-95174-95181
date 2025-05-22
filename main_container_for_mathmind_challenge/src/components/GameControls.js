@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGameContext } from '../context/GameContext';
+import { generateRandomProblem } from '../utils/mathProblems';
 
 /**
  * GameControls component for managing game flow (start, end, difficulty)
@@ -12,8 +13,6 @@ const GameControls = () => {
     difficulty, 
     setDifficulty 
   } = useGameContext();
-  
-  const { generateRandomProblem } = require('../utils/mathProblems');
   
   const handleStartGame = () => {
     const firstProblem = generateRandomProblem(difficulty);
