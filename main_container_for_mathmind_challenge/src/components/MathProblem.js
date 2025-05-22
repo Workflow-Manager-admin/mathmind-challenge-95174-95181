@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGameContext } from '../context/GameContext';
+import { generateRandomProblem } from '../utils/mathProblems';
 
 /**
  * MathProblem component for displaying the current math problem and handling user input
@@ -12,8 +13,6 @@ const MathProblem = () => {
     updateAnswer, 
     submitAnswer 
   } = useGameContext();
-  
-  const { generateRandomProblem } = require('../utils/mathProblems');
   
   const handleSubmit = (e) => {
     e.preventDefault();
